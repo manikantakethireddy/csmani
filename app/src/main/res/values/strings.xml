@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MyApp</string>
+    <string name="todo">TODO</string>
+    <string name="toast_button_text">Toast</string>
+    <string name="Random_button_text">Random</string>
+    <string name="Count_button_text">Count</string>
+</resources>
