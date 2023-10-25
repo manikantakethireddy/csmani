@@ -22,7 +22,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".RandomNumberActivity">
-            <!-- Include any intent-filter if needed -->
         </activity>
     </application>
 

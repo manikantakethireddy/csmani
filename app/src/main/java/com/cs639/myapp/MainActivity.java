@@ -2,6 +2,7 @@ package com.cs639.myapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -10,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private int count = 0;  // Initialize a count variable
+    private int count = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
         toastButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Display a toast message
                 Toast.makeText(MainActivity.this, "This is a toast message!", Toast.LENGTH_SHORT).show();
             }
         });
@@ -32,11 +32,9 @@ public class MainActivity extends AppCompatActivity {
         countButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Increase the count by 1
                 count++;
-
-                // Update the text of the TextView
-                textView.setText(String.valueOf(count));
+                int mk = Log.i("MK", "the count is:" + count);
+                textView.setText("Count: " + count);
             }
         });
 
@@ -44,13 +42,8 @@ public class MainActivity extends AppCompatActivity {
         randomButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Create an Intent to start the new activity
-                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-
-                // Pass the current count as an extra to the new activity
+                Intent intent = new Intent(MainActivity.this, RandomNumberActivity.class);
                 intent.putExtra("currentCount", count);
-
-                // Start the new activity
                 startActivity(intent);
             }
         });
